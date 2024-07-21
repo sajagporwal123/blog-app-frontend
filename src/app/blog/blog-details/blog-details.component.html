@@ -1,0 +1,8 @@
+<div class="container mt-5 mb-5" *ngIf="blog">
+  <h2>{{ blog.title }}</h2>
+  <p>
+    Written by {{ blog.user.name }} on
+    {{ blog.createdAt | date : "dd/MM/yy, h:mm a" }}
+  </p>
+  <div class="mt-3" [innerHTML]="blog.content"></div>
+</div>

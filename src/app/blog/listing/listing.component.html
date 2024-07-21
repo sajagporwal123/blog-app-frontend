@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="container">
+    <a routerLink="/create" class="btn btn-primary mb-3">Create Post</a>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let blog of blogs">
+        <div class="card h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-0">{{ blog.title }}</h5>
+            <p class="card-text mb-2">
+              Written by {{ blog.user.name }} -
+              {{ blog.createdAt | date : "dd/MM/yy, h:mm a" }}
+            </p>
+            <div
+              class="d-flex justify-content-start align-items-center mt-auto"
+            >
+              <a
+                [routerLink]="['/', blog._id]"
+                class="btn btn-primary btn-sm mr-2 btn-space"
+                >View Details</a
+              >
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="openModal(template, blog._id)"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="blogs.length">
+    <div class="col-12">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <a
+              class="page-link"
+              (click)="changePage(currentPage - 1)"
+              aria-label="Previous"
+            >
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li
+            class="page-item"
+            *ngFor="let page of totalPagesArray"
+            [class.active]="page === currentPage"
+          >
+            <a class="page-link" (click)="changePage(page)">{{ page }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a
+              class="page-link"
+              (click)="changePage(currentPage + 1)"
+              aria-label="Next"
+            >
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Do you want to confirm?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()">
+      Yes
+    </button>
+    <button type="button" class="btn btn-primary" (click)="decline()">
+      No
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,45 @@
+// Customize Bootstrap variables if needed
+$primary-color: #007bff;
+
+// Add custom styles
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.btn-danger {
+  padding: 15px 50px;
+  font-size: 1.5rem;
+  background-color: #dd4b39; /* Google red */
+  border-color: #dd4b39; /* Google red */
+}
+
+.btn-danger:hover {
+  background-color: darken(#dd4b39, 10%);
+}

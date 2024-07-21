@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.container {
+  padding: 20px;
+}
+
+.ck-editor__editable_inline {
+  min-height: 250px;
+  height: 250px;
+}

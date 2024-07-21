@@ -1,0 +1,56 @@
+.fixed-height-card {
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fixed-height-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-height-card .card-text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fixed-height-card .blog-time {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.fixed-height-card-text {
+  height: 100px;
+  overflow: hidden;
+  /* Ensures content doesn't overflow */
+  text-overflow: ellipsis;
+  /* Truncate text if it overflows */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1;
+  overflow: hidden;
+  /* Optional: To hide overflow content */
+}
+
+.btn-custom {
+  font-size: 14px;
+  /* Adjust font size */
+  padding: 5px 10px;
+  /* Adjust padding */
+}
+
+.btn-space {
+  margin-right: 10px;
+}
