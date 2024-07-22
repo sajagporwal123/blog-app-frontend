@@ -1,5 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from '../../auth/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * HeaderComponent displays the header of the application.
@@ -10,7 +10,7 @@ import { AuthService } from '../../auth/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   isAuthenticated: boolean = false;
 
   /**
@@ -27,12 +27,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.isAuthenticated = this.authService.isAuthenticated();
   }
 
-  /**
-   * Lifecycle hook that is called when the component is destroyed.
-   */
-  ngOnDestroy(): void {
-    // Cleanup logic can be added here if needed.
-  }
 
   /**
    * Logs out the user by calling the AuthService's logout method.

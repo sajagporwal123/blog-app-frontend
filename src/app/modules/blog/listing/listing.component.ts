@@ -1,8 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Blog } from 'src/app/models/blog.model';
-import { BlogService } from '../../services/blog.service';
-import { ToasterService } from '../../services/toaster.service';
+import { BlogService } from 'src/app/services/blog.service';
+import { ToasterService } from 'src/app/services/toaster.service';
+
 
 @Component({
   selector: 'app-listing',
@@ -34,7 +35,7 @@ export class ListingComponent implements OnInit {
    * Fetch blogs from the server with pagination.
    * Updates the blogs array, totalPages, and totalPagesArray.
    */
-  private loadBlogs(): void {
+  public loadBlogs(): void {
     this.blogService
       .getBlogs({
         page: this.currentPage,

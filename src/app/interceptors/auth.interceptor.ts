@@ -8,7 +8,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../services/auth.service';
 import { LoggerService } from '../services/logger.service';
 
 /**

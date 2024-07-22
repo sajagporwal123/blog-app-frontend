@@ -1,8 +1,13 @@
 import { TruncatePipe } from './truncate.pipe';
 
 describe('TruncatePipe', () => {
-  it('create an instance', () => {
-    const pipe = new TruncatePipe();
+  let pipe: TruncatePipe;
+
+  beforeEach(() => {
+    pipe = new TruncatePipe();
+  });
+
+  it('should create an instance', () => {
     expect(pipe).toBeTruthy();
   });
 });

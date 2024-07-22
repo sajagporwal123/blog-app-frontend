@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { gapi, loadGapiInsideDOM } from 'gapi-script';
-import { environment } from '../../environments/environment';
-import { GoogleLoginJWT } from '../models/google-login.model';
-import { AuthService } from './auth.service';
+import { environment } from '../../../environments/environment';
+import { GoogleLoginJWT } from '../../models/google-login.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-auth',

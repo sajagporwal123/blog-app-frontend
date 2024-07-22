@@ -7,9 +7,7 @@ import { Blog } from '../models/blog.model';
 /**
  * BlogService is responsible for handling blog-related operations.
  */
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class BlogService {
   private apiUrl = `${environment.API_URL}/blogs`;
 

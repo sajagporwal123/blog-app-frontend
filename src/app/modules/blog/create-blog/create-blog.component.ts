@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ToasterService } from '../../services/toaster.service';
-import { BlogService } from '../../services/blog.service';
+import { ToasterService } from '../../../services/toaster.service';
+import { BlogService } from '../../../services/blog.service';
 
 /**
  * Component for creating a new blog.
@@ -58,7 +58,11 @@ export class CreateBlogComponent {
       this.blogService.createBlog(this.blogForm.value).subscribe(
         (data) => {
           this.toasterService.showSuccess('Success', 'Blog Added Successfully');
-          this.blogForm.reset();
+          // this.blogForm.reset();
+          this.blogForm.reset({
+            title: '',
+            content: ''
+          });
           this.router.navigate(['/']);
         },
         (error) => {

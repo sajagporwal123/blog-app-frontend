@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Blog } from 'src/app/models/blog.model';
-import { BlogService } from '../../services/blog.service';
-import { ToasterService } from './../../services/toaster.service';
+import { Blog } from '../../../models/blog.model';
+import { BlogService } from '../../../services/blog.service';
+import { ToasterService } from '../../../services/toaster.service';
 
 /**
  * BlogDetailsComponent displays the details of a specific blog.
@@ -43,12 +43,12 @@ export class BlogDetailsComponent implements OnInit {
     this.blogService.getBlog(this.id).subscribe(
       (apiResponse: Blog) => {
         this.blog = apiResponse;
-        if (!this.blog) {
-          this.toasterService.showError('Error', 'Blog not found');
-        }
       },
       (error: any) => {
         console.error('Error fetching blog details:', error);
+        if (error?.error?.error){
+          this.toasterService.showError('Error',error.error.error );
+        }
       }
     );
   }
